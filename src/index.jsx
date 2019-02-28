@@ -5,9 +5,9 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 
-    console.log('props: %o', props)
+    console.log('asdfsadf: %o', props)
 
-    this.state = { message: 'something' }
+    this.state = { message: 'test' }
   }
 
   onChange(e) {
