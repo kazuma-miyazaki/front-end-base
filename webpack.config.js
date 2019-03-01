@@ -1,2 +1,2 @@
 require('@babel/register');
-module.exports = require('./development');
+module.exports = require('./webpack/development').makeDevelopment(__dirname);
