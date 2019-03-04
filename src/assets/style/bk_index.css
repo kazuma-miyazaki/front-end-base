@@ -1,0 +1,13 @@
+body {
+  padding: 0;
+  background: url('../images/index/icon--index.png');
+}
+
+body {
+  padding: 0;
+  background: url('../images/icon--index.png');
+
+  div {
+    padding: 0;
+  }
+}

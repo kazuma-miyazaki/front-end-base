@@ -1,4 +1,5 @@
-import { makeDir } from './dir'
+import path from 'path'
+import { makeDir } from './tools/dir'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import InterpolateHtmlPlugin from'interpolate-html-plugin'
@@ -18,7 +19,7 @@ const makeDevelopment = dirname => {
     },
 
     output: {
-      path: dir.dist.base,
+      path    : dir.dist.base,
       filename: '[name].bundle.js',
     },
 
@@ -42,20 +43,35 @@ const makeDevelopment = dirname => {
       new CleanWebpackPlugin(['dist']),
 
       // compile and export setting
+      // https://github.com/jantimon/html-webpack-plugins
       new HtmlWebpackPlugin({
         // 指定した自作htmlに適用する、指定がなければ勝手にhtmlを生成
         template: dir.join(dir.src.base, '/index.html'),
         // 出力ファイル名
-        filename: 'index.html',
+        filename: 'indx.hteml',
         // すべてのアセットを指定されたものに挿入
         // inject: true
       }),
   　
       // 複数ファイルの指定も可能
-      // new HtmlWebpackPlugin({
-      //   filename: "admin.html",
-      //   template: "./html/admin.html"s
-      // }),
+      new HtmlWebpackPlugin({
+        title   : 'Form HTML',
+        filename: "form.html",
+        meta: {
+          'Content-Security-Policy': { 'http-equiv': 'Content-Security-Policy', 'content': 'default-src https:' },
+          // Will generate: <meta http-equiv="Content-Security-Policy" content="default-src https:">
+          // Which equals to the following http header: `Content-Security-Policy: default-src https:`
+          'set-cookie': { 'http-equiv': 'set-cookie', content: 'name=value; expires=date; path=url' },
+          // Will generate: <meta http-equiv="set-cookie" content="value; expires=date; path=url">
+          // Which equals to the following http header: `set-cookie: value; expires=date; path=url`
+        },
+        template: dir.join(dir.src.base, 'form.html'),
+      }),
+
+      new HtmlWebpackPlugin({
+        template: dir.join(dir.src.base, 'template.ejs'),
+        filename: 'template.html',
+      }),
 
       new MiniCssExtractPlugin({
         filename     : devMode ? '[name].css' : '[name].[hash].css',
@@ -71,11 +87,19 @@ const makeDevelopment = dirname => {
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
-        }, {
-          test: /\.css$/,
+          test : /\.ejs$/,
+          use: [
+            'html-loader',
+            'ejs-html-loader'
+          ]
+        },
+        {
+          test: /\.(js|jsx)$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/
+        },
+        {
+          test: /\.(s[a|c]ss|css)$/,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
@@ -93,15 +117,39 @@ const makeDevelopment = dirname => {
             // 'postcss-loader',
             'sass-loader'
           ]
-        }, {
+        },
+        {
           test: /\.(png|jpg|gif|svg)$/,
-          use: 'file-loader'
-        }
+          use: [
+            {
+              // https://github.com/webpack-contrib/file-loader
+              loader: 'file-loader',
+              options: {
+                name: () => {
+                  return devMode ? '[name].[hash].[ext]' : '[name].[ext]';
+                },
+                // 出力ファイルパス
+                outputPath: (resource, resourcePath) => {
+                  return path.join(resourcePath.replace(dir.src.base + '/', ''))
+                },
+                // アクセスファイルパス
+                publicPath: (resource, resourcePath) => {
+                  return path.join(path.relative(dir.src.style, dir.src.assets), resourcePath.replace(dir.src.base + '/', ''))
+                }
+              },
+            }
+          ],
+        },
       ]
     },
 
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias     : {
+        '@js'     : dir.src.js,
+        '@style'  : dir.src.style,
+        '@images' : dir.src.images,
+      }
     },
   }
 }

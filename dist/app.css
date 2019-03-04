@@ -1,4 +1,7 @@
 body {
   padding: 0;
-  background: url("/assets/images/icon.png"); }
+  background-image: url(../assets/images/index/icon--index.png);
+  background-repeat: no-repeat; }
+  body div {
+    padding: 0; }
 
