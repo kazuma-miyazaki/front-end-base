@@ -1,6 +1,7 @@
-import path from 'path'
+import appRoot from 'app-root-path'
+import path    from 'path'
 
-const makeDir = dirname => {
+const makeDir = () => {
   const _makeDirPath = base => {
     const assets = path.join(base, 'assets')
 
@@ -13,13 +14,24 @@ const makeDir = dirname => {
     }
   };
 
+  const root    = appRoot.path;
+  const webpack = path.join(appRoot.path, 'webpack');
+  const src     = _makeDirPath(path.join(appRoot.path, 'src'));
+  const dist    = _makeDirPath(path.join(appRoot.path, 'dist'));
+
   return {
-    join : (dir, file) => path.join(dir, file),
-    src : _makeDirPath(path.join(dirname, 'src')),
-    dist: _makeDirPath(path.join(dirname, 'dist')),
+    root,
+    webpack,
+    src,
+    dist,
+    join            : (_dir,   _file)  => path.join(_dir, _file),
+    relative        : (_path1, _path2) => path.relative(_path1, _path2),
+    relativeWithRoot: _path => path.relative(root,      _path),
+    relativeWithSrc : _path => path.relative(src.base,  _path),
+    relativeWithDist: _path => path.relative(dist.base, _path)
   }
 }
 
 module.exports = {
-  makeDir
+  dir: makeDir()
 }
