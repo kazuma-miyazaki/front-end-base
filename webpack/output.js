@@ -1,4 +1,4 @@
-import { dir } from './tools/dir'
+import { dir } from 'tools/dir'
 
 module.exports = {
   output: {

@@ -1,7 +1,7 @@
-import { providePlugin }         from './webpack'
-import { cleanWebpackPlugin }    from './cleanWebpackPlugin'
-import { interpolateHtmlPlugin } from './interpolateHtmlPlugin'
-import { miniCssExtractPlugin }  from './miniCssExtractPlugin'
+import { providePlugin }         from 'webpack/plugins/webpack'
+import { cleanWebpackPlugin }    from 'webpack/plugins/cleanWebpackPlugin'
+import { interpolateHtmlPlugin } from 'webpack/plugins/interpolateHtmlPlugin'
+import { miniCssExtractPlugin }  from 'webpack/plugins/miniCssExtractPlugin'
 
 module.exports = {
   plugins: [

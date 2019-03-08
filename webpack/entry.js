@@ -1,12 +1,18 @@
-import { dir } from './tools/dir'
+import { dir } from 'tools/dir'
 
-const filePath = file => dir.join(dir.src.js, file)
+console.log("process.env.NODE_PATH: " + process.env.NODE_PATH);
+console.log("dir.src.js: %o", dir.src.js);
 
 module.exports = {
-  // key  : output target directory
-  // value: include target file path
+  /**
+   * {object}
+   *   key  : output file
+   *   value: entry file
+   */
   entry: {
-    'app'       : filePath('app.jsx'),
-    'pages/form': filePath('pages/form.js')
+    'app'       : dir.resolve(dir.src.js, 'app.jsx'),
+    'pages/form': dir.resolve(dir.src.js, 'pages/form.js')
   }
-}
+} 
+
+

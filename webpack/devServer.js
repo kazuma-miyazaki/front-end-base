@@ -7,7 +7,6 @@ module.exports = {
     watchContentBase: true,
     index           : '/index.html',
     port            : 8080,
-    // public: 'myapp.test:8080',
     staticOptions   : {
       redirect: false
     },

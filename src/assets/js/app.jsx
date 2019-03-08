@@ -21,7 +21,7 @@ class App extends React.Component {
         <input type="text" onChange={this.onChange.bind(this)} />
         <p>{ this.state.message }</p>
       </div>
-    )
+    )s
   }
 }
 

@@ -1,10 +1,10 @@
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { developmentMode }  from './../tools/mode'
+import { mode }  from 'tools/mode'
 
 module.exports = {
   miniCssExtractPlugin: new MiniCssExtractPlugin({
-    filename     : developmentMode ? '[name].css' : '[name].[hash].css',
-    chunkFilename: developmentMode ? '[id].css'   : '[id].[hash].css',
+    filename     : mode.development ? '[name].css' : '[name].[hash].css',
+    chunkFilename: mode.development ? '[id].css'   : '[id].[hash].css',
   }),
 }

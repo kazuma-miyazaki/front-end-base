@@ -24,11 +24,9 @@ const makeDir = () => {
     webpack,
     src,
     dist,
-    join            : (_dir,   _file)  => path.join(_dir, _file),
-    relative        : (_path1, _path2) => path.relative(_path1, _path2),
-    relativeWithRoot: _path => path.relative(root,      _path),
-    relativeWithSrc : _path => path.relative(src.base,  _path),
-    relativeWithDist: _path => path.relative(dist.base, _path)
+    join    : (_dir,   _file)  => path.join(_dir, _file),
+    resolve : (_path1, _path2) => path.resolve(_path1, _path2),
+    relative: (_path1, _path2) => path.relative(_path1, _path2)
   }
 }
 
