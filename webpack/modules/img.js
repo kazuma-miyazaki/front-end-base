@@ -4,9 +4,7 @@ import { dir }  from 'tools/dir'
 
 // https://github.com/webpack-contrib/file-loader
 
-console.log("mode.developmennt: %o", mode);
-
-const outputFileName = mode.developmennt
+const outputFileName = mode.development
   ? '[name].[ext]'
   : '[name].[hash].[ext]'
 
@@ -21,11 +19,11 @@ module.exports = {
             return outputFileName
           },
           outputPath(resource, resourcePath) {
-            return path.join(resourcePath.replace(dir.src.base + '/', ''))
+            return path.join(resourcePath.replace(dir.src + '/', ''))
           },
-          publicPath(resource, resourcePath) {
-            return path.join(path.relative(dir.src.style, dir.src.assets), resourcePath.replace(dir.src.base + '/', ''))
-          }
+          // publicPath(resource, resourcePath) {
+          //   return path.join(path.relative(dir.src.style, dir.src.assets), resourcePath.replace(dir.src + '/', ''))
+          // }
         },
       }
     ],

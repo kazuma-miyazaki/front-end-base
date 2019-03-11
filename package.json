@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
-    "watch": "NODE_ENV=test webpack-dev-server --hot"
+    "watch": "NODE_ENV=development webpack-dev-server --hot",
+    "watch:production": "NODE_ENV=sproduction webpack-dev-server --hot",
+    "watch:development": "NODE_ENV=development webpack-dev-server --hot"
   },
   "author": "",
   "license": "ISC",

@@ -2,37 +2,25 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { dir }           from 'tools/dir'
 
 // compile and export setting
-// https://github.com/jantimon/html-webpack-plugins
+// https://github.com/jantimon/html-webpack-plugin
 
-const pages = {
-  1: {
-    template: 'index.html',
+const pages = [
+  {
+    template: '/template/index.ejs',
     filename: 'index.html'
-  },
-  2: {
-    template: 'form.html',
+  }, {
+    template: '/template/form.ejs',
     filename: 'form.html',
     title   : 'Form HTML',
-    meta    : {
-      'Content-Security-Policy': {
-        'http-equiv': 'Content-Security-Policy',
-        'content'   : 'default-src https:'
-      },
-      'set-cookie': {
-        'http-equiv': 'set-cookie',
-        'content'   : 'name=value; expires=date; path=url'
-      },
-    }
-  },
-  3: {
-    template: '/template/template.ejs',
+    meta    : {},
+  }, {
+    template: '/template/form.ejs',
     filename: 'pages/aaa.html',
   }
-}
+].map(page => new HtmlWebpackPlugin(
+  Object.assign(page, { template: dir.join(dir.src, page.template) })
+));
 
 module.exports = {
-  pages: Object.keys(pages).map(pageID => {
-    pages[pageID].template = dir.join(dir.src.base, pages[pageID].template)
-    return new HtmlWebpackPlugin(pages[pageID]);
-  })
-};
+  pages
+}

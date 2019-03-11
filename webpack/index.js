@@ -7,20 +7,17 @@ import { output }    from 'webpack/output'
 import { devServer } from 'webpack/devServer'
 import { resolve }   from 'webpack/resolve'
 
+console.log('plugins: %o', [].concat(pages, plugins));
 
+console.log('mode is: ' + mode.is);
 
 export default {
   mode: mode.is,
-
   entry,
-
   output,
-
   devServer,
-
   plugins: [].concat(pages, plugins),
-
   module,
-
-  resolve
+  resolve,
+  devtool: '#inline-source-map'
 }
