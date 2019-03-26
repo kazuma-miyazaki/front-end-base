@@ -1,13 +1,11 @@
 import './style/App.scss';
 import React from 'react';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
-
-    console.log('asdfsadf: %o', props)
-
-    this.state = { message: 'test' }
+    this.state = { message: 'form text' }
   }
 
   onChange(e) {
@@ -23,5 +21,7 @@ class App extends React.Component {
     )
   }
 }
+
+
 
 export default App;

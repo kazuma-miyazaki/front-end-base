@@ -1,12 +1,5 @@
-import React      from 'react';
-import { render } from 'react-dom';
-import App        from './App';
-import {
-  ReactRenderingHelper
-}                 from 'tools/ReactRenderingHelper';
+import App from './App';
 
-const makeApp = id => ReactRenderingHelper(App, id).make;
 
-export default {
-  makeApp
-};
+
+export default App;
