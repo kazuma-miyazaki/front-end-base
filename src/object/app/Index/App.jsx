@@ -16,16 +16,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="l-single">
-        <div class="l-single__header">
+      <div className="l-single">
+        <div className="l-single__header">
           <P_Header></P_Header>
         </div>
 
-        <div class="l-single__main">
+        <div className="l-single__main">
 
           {/* /application main */}
 
-          <div class="App_Index">
+          <div className="app_Index">
             <input type="text" onChange={this.onChange.bind(this)} />
             <p>{this.state.message}</p>
           </div>
@@ -34,7 +34,7 @@ class App extends React.Component {
 
         </div>
 
-        <div class="l-single__footer">
+        <div className="l-single__footer">
           <P_Footer></P_Footer>
         </div>
       </div>

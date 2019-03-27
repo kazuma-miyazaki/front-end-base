@@ -1,5 +1,5 @@
-import P_Header from "./Header";
+import Project from "./Project";
 
 
 
-export default P_Header;
+export default Project;

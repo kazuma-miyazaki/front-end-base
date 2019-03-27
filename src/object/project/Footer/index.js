@@ -1,5 +1,5 @@
-import P_Footer from "./Footer";
+import Project from "./Project";
 
 
 
-export default P_Footer;
+export default Project;
