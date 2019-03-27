@@ -1,5 +1,8 @@
-import "./style/App.scss";
+import './style/App.scss';
 import React from "react";
+import P_Header from '@src/object/project/Header';
+import P_Footer from '@src/object/project/Footer';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -13,9 +16,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" onChange={this.onChange.bind(this)} />
-        <p>{this.state.message}</p>
+      <div class="l-single">
+        <div class="l-single__header">
+          <P_Header></P_Header>
+        </div>
+
+        <div class="l-single__main">
+
+          {/* /application main */}
+
+          <div class="App_Index">
+            <input type="text" onChange={this.onChange.bind(this)} />
+            <p>{this.state.message}</p>
+          </div>
+
+          {/* application main/ */}
+
+        </div>
+
+        <div class="l-single__footer">
+          <P_Footer></P_Footer>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * - Removal of *.hot-update.json files
  * @see https://github.com/gaearon/react-hot-loader/issues/456
  *

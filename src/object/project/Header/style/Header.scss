@@ -1,0 +1,10 @@
+.p-Header {
+  padding: 50px 0;
+  background: tomato;
+
+  &__title {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+  }
+}

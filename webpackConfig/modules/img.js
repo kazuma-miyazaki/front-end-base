@@ -6,13 +6,13 @@
 
 
 
-const path = require('path');
-const mode = require('tools/mode');
-const dir  = require('tools/dir');
+const path            = require('path');
+const { development } = require('tools/mode');
+const { src }         = require('tools/dir');
 
 
 
-const outputFileName = mode.development
+const outputFileName = development
   ? '[name].[ext]'
   : '[name].[hash].[ext]';
 
@@ -27,8 +27,8 @@ const fileLoader = {
     },
 
     outputPath(resource, resourcePath) {
-      console.log('outputPath: %o', path.join(resourcePath.replace(dir.src + '/', '')));
-      return path.join(resourcePath.replace(dir.src + '/', ''));
+      console.log('outputPath: %o', path.join(resourcePath.replace(src + '/', '')));
+      return path.join(resourcePath.replace(src + '/', ''));
     },
 
     // publicPath(resource, resourcePath) {

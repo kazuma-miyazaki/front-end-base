@@ -18,11 +18,6 @@ const {
 
 
 
-console.log('template: %o', join(src, 'template/index.ejs'));
-console.log('template: %o', join(src, '/template/index.ejs'));
-
-
-
 module.exports = [
   {
     template: 'template/index.ejs',

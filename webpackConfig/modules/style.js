@@ -12,7 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   test: /\.(s[a|c]ss|css)$/,
-  use: [
+  use : [
     {
       loader : MiniCssExtractPlugin.loader,
       options: {
