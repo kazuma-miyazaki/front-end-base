@@ -7,12 +7,12 @@
 
 
 
-const dir = require('tools/dir');
+const { dist } = require('tools/dir');
 
 
 
 module.exports = {
-  path                  : dir.dist,
+  path                  : dist,
   filename              : '[name].bundle.js',
   hotUpdateChunkFilename: 'hot/hot-update.js',
   hotUpdateMainFilename : 'hot/hot-update.json'

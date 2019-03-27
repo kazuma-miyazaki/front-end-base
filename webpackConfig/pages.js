@@ -8,29 +8,34 @@
 
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const dir               = require('tools/dir');
+const {
+  mergeObject
+} = require('tools/objectHelper');
+const {
+  join,
+  src,
+} = require('tools/dir');
+
+
+
+console.log('template: %o', join(src, 'template/index.ejs'));
+console.log('template: %o', join(src, '/template/index.ejs'));
 
 
 
 module.exports = [
   {
-    template: '/template/index.ejs',
+    template: 'template/index.ejs',
     filename: 'index.html'
   },
 
   {
-    template: '/template/form.ejs',
+    template: 'template/form.ejs',
     filename: 'form.html',
     title   : 'Form HTML',
     meta    : {},
   },
 
-  {
-    template: '/template/form.ejs',
-    filename: 'pages/aaa.html',
-  }
-
 ].map(page => new HtmlWebpackPlugin(
-  Object.assign(page, { template: dir.join(dir.src, page.template) })
+  mergeObject([page, { template: join(src, page.template) }])
 ));
-

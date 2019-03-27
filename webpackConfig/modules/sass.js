@@ -1,8 +1,12 @@
+/**
+ *
+ * @see https://github.com/okonet/ejs-loader
+ *
+ --------------------------------------------------------------------- */
+
+
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-
-
-// https://github.com/okonet/ejs-loader
 
 
 

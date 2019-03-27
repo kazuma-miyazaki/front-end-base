@@ -1,6 +1,6 @@
 /**
  *
- * - MiniCssExtractPlugin
+ * - InterpolateHtmlPlugin
  * @see https://github.com/egoist/interpolate-html-plugin
  *
  --------------------------------------------------------------------- */

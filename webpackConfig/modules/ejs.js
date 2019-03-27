@@ -1,17 +1,16 @@
 /**
  *
- * @see https://github.com/okonet/ejs-loader
+ * - mcmath/ejs-html-loader
+ * @see https://github.com/mcmath/ejs-html-loader
+ *
+ * - webpackで静的サイトジェネレータ(EJS編)
+ * @see https://qiita.com/kn1cht/items/d3fcd3376ab3461bf05a
  *
  --------------------------------------------------------------------- */
 
 
 
 module.exports = {
-  test  : /\.ejs$/,
-  loader: 'ejs-loader',
-  query : {
-    variable   : 'data',
-    interpolate: '\\{\\{(.+?)\\}\\}',
-    evaluate   : '\\[\\[(.+?)\\]\\]'
-  }
+  test: /\.ejs$/,
+  use : [ 'html-loader', 'ejs-html-loader' ]
 };

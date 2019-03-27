@@ -1,10 +1,14 @@
+/**
+ *
+ * @see https://github.com/webpack-contrib/file-loader
+ *
+ --------------------------------------------------------------------- */
+
+
+
 const path = require('path');
 const mode = require('tools/mode');
 const dir  = require('tools/dir');
-
-
-
-// https://github.com/webpack-contrib/file-loader
 
 
 
