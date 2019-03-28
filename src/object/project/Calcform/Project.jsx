@@ -1,12 +1,3 @@
-/**
- *
- * project: Footer
- *
- --------------------------------------------------------------------- */
-
-
-
-import "./style/Project.scss";
 import React from "react";
 
 

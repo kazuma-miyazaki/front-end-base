@@ -1,7 +1,16 @@
+/**
+ *
+ * app: Index
+ *
+ --------------------------------------------------------------------- */
+
+
+
 import './style/App.scss';
 import React from "react";
 import P_Header from '@src/object/project/Header';
 import P_Footer from '@src/object/project/Footer';
+
 
 
 class App extends React.Component {
@@ -25,7 +34,7 @@ class App extends React.Component {
 
           {/* /application main */}
 
-          <div className="app_Index">
+          <div className="app-Index">
             <input type="text" onChange={this.onChange.bind(this)} />
             <p>{this.state.message}</p>
           </div>
@@ -41,5 +50,7 @@ class App extends React.Component {
     );
   }
 }
+
+
 
 export default App;
