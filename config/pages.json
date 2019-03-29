@@ -1,0 +1,21 @@
+{
+  "index.html": {
+    "base": {
+      "template": "template/index.ejs"
+    },
+    "react": {
+      "template": "Single"
+    }
+  },
+
+  "form.html": {
+    "base": {
+      "template": "template/form.ejs",
+      "title"   : "Form HTML",
+      "meta"    : {}
+    },
+    "react": {
+      "template": "Single"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "index.html": {
+    "base": {
+      "template": "template/index.ejs",
+      "title"   : "Index HTML",
+      "meta"    : {}
+    }
+  }
+}

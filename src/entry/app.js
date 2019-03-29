@@ -1,16 +1,19 @@
+import '@style';
 import React      from "react";
 import { render } from "react-dom";
-import Index      from "@src/object/app/Index";
-import Form       from "@src/object/app/Form";
+import Index      from "@react/app/Index";
+// import Form       from "@react/object/app/Form";
 
 
 
 const apps = {
+
   // apps
 
   index: Index,
 
-  form: Form
+  // form: Form
+
 };
 
 

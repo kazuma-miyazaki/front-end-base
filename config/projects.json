@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "Header"
+  },
+
+  "footer": {
+    "title": "Footer",
+    "copyright": "copyright"
+  },
+
+  "nav": [
+    { "text": "item1", "href": "google/co.jp" },
+    { "text": "item2", "href": "google/co.jp" },
+    { "text": "item3", "href": "google/co.jp" },
+    { "text": "item4", "href": "google/co.jp" },
+    { "text": "item5", "href": "google/co.jp" }
+  ]
+}

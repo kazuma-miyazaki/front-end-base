@@ -1,9 +1,11 @@
 /**
  *
+ * @see https://webpack.js.org/concepts/output
+ *
  * - Removal of *.hot-update.json files
  * @see https://github.com/gaearon/react-hot-loader/issues/456
  *
- --------------------------------------------------------------------- */
+--------------------------------------------------------------------- */
 
 
 

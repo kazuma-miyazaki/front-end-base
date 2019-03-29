@@ -1,0 +1,25 @@
+/**
+ * 
+ * FLOCK: layout/single.scsss
+ *
+--------------------------------------------------------------------- */
+
+
+
+.l-single {
+  &__header {
+    height: 140px;
+  }
+
+  &__nav {
+    height: 50px;
+  }
+
+  &__main {
+    min-height: calc(100vh - 280px - 50px);
+  }
+
+  &__footer {
+    height: 140px;
+  }
+}

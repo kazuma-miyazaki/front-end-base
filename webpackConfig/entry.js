@@ -1,3 +1,12 @@
+/**
+ *
+ * - HtmlWebpackPlugin
+ * @see https://webpack.js.org/concepts/entry-points
+ *
+--------------------------------------------------------------------- */
+
+
+
 const {
   src,
   resolve

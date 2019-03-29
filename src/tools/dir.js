@@ -1,1 +1,2 @@
-export default require('../../tools/dir');
+const { path } = require('app-root-path');
+export default require(path + '/tools/dir');

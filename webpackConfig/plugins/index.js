@@ -1,3 +1,11 @@
+/**
+ *
+ * @see https://webpack.js.org/concepts/plugins
+ *
+--------------------------------------------------------------------- */
+
+
+
 const { providePlugin }     = require('webpackConfig/plugins/webpack');
 const cleanWebpackPlugin    = require('webpackConfig/plugins/cleanWebpackPlugin');
 const interpolateHtmlPlugin = require('webpackConfig/plugins/interpolateHtmlPlugin');

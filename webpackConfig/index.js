@@ -1,3 +1,11 @@
+/**
+ *
+ * @see https://webpack.js.org/concepts
+ *
+--------------------------------------------------------------------- */
+
+
+
 const mode      = require('webpackConfig/mode');
 const entry     = require('webpackConfig/entry');
 const output    = require('webpackConfig/output');

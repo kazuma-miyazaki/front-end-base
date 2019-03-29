@@ -1,0 +1,19 @@
+.p-Nav {
+  &__inner {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 50px;
+    background: orange;
+  }
+
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__link {
+    color: #fff;
+  }
+}
